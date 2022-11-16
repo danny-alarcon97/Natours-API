@@ -4,7 +4,7 @@ const morgan = require('morgan');
 
 const app = express();
 
-// 1) MIDDLEWARES
+// 1) MIDDLEWARE
 
 app.use(morgan('dev'));
 
@@ -110,7 +110,42 @@ const deleteTour = (req, res) => {
   });
 };
 
-// ROUTE
+const getAllUsers = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined!',
+  });
+};
+
+const getUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined!',
+  });
+};
+
+const createUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined!',
+  });
+};
+
+const updateUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined!',
+  });
+};
+
+const deleteUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined!',
+  });
+};
+
+// 3) ROUTE
 
 // app.post('/api/v1/tours', createTour);
 // app.get('/api/v1/tours', getAllTours);
@@ -126,7 +161,15 @@ app
   .patch(updateTour)
   .delete(deleteTour);
 
-// START SERVER
+app.route('/api/v1/users').get(getAllUsers).post(createUser);
+
+app
+  .route('/api/v1/users/:id')
+  .get(getUser)
+  .patch(updateUser)
+  .delete(deleteUser);
+
+// 4) START SERVER
 
 const port = 3000;
 app.listen(port, () => {
