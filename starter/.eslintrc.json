@@ -2,7 +2,14 @@
   "extends": ["airbnb", "prettier", "plugin:node/recommended"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "parser": "flow"
+      }
+    ],
+    "indent": ["error", { "allowIndentationTabs": true }],
     "spaced-comment": "off",
     "no-console": "warn",
     "consistent-return": "off",
